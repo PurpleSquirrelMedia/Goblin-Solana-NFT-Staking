@@ -67,6 +67,9 @@ export default function Products() {
   }
 
   const updateLotteryPoolState = (addr) => {
+    for (let i = 0; i < 2000; i++) {
+      clearInterval(i)
+    }
     getLotteryState(addr).then(async result => {
       if (result !== null) {
         const list = result.items.slice(0, result.itemCount.toNumber());
@@ -120,6 +123,9 @@ export default function Products() {
   }
 
   const updateFixedPoolState = (addr) => {
+    for (let i = 0; i < 2000; i++) {
+      clearInterval(i)
+    }
     getFixedState(addr).then(async result => {
       if (result !== null) {
         const list = result.items.slice(0, result.itemCount.toNumber());
@@ -205,9 +211,6 @@ export default function Products() {
   }
 
   useEffect(() => {
-    for (let i = 0; i < 2000; i++) {
-      clearInterval(i)
-    }
     setLotteryState({ itemCount: 0, items: [] })
     setFixedState({ itemCount: 0, items: [] })
     setUnstakedNFTList([])
